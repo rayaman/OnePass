@@ -124,6 +124,11 @@ namespace OnePass
                 addLower(ref chars);
             if (uAtoZ.BackColor == System.Drawing.SystemColors.Highlight)
                 addUpper(ref chars);
+            if (chars.Count == 0)
+            {
+                MessageBox.Show("Must have at least one option turned on to generate a password!");
+                return;
+            }
             byte[] sn_bytes = Encoding.ASCII.GetBytes(sitename.Text);
             byte[] un_bytes = Encoding.ASCII.GetBytes(username.Text);
             byte[] mp_bytes = Encoding.ASCII.GetBytes(masterpass.Text);
