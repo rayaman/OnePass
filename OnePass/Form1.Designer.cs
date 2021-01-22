@@ -236,7 +236,7 @@ namespace OnePass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 176);
+            this.ClientSize = new System.Drawing.Size(380, 180);
             this.Controls.Add(this.special);
             this.Controls.Add(this.numbers);
             this.Controls.Add(this.uAtoZ);
@@ -254,8 +254,10 @@ namespace OnePass
             this.Controls.Add(this.passCycle);
             this.Controls.Add(this.Generate);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(396, 219);
+            this.MinimumSize = new System.Drawing.Size(396, 219);
             this.Name = "Form1";
-            this.Text = "OnePass V1.0";
+            this.Text = "OnePass V1.1";
             ((System.ComponentModel.ISupportInitialize)(this.passCycle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passLength)).EndInit();
             this.ResumeLayout(false);

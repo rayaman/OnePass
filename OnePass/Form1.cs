@@ -152,6 +152,5 @@ namespace OnePass
             Generate.Text = "Generate Password";
             Generate.Enabled = true;
         }
-
     }
 }
