@@ -1,0 +1,10 @@
+C:\Users\rayam\source\repos\OnePass\OnePass\bin\Release\OnePass.exe.config
+C:\Users\rayam\source\repos\OnePass\OnePass\bin\Release\OnePass.exe
+C:\Users\rayam\source\repos\OnePass\OnePass\bin\Release\OnePass.pdb
+C:\Users\rayam\source\repos\OnePass\OnePass\obj\Release\OnePass.csprojAssemblyReference.cache
+C:\Users\rayam\source\repos\OnePass\OnePass\obj\Release\OnePass.Form1.resources
+C:\Users\rayam\source\repos\OnePass\OnePass\obj\Release\OnePass.Properties.Resources.resources
+C:\Users\rayam\source\repos\OnePass\OnePass\obj\Release\OnePass.csproj.GenerateResource.cache
+C:\Users\rayam\source\repos\OnePass\OnePass\obj\Release\OnePass.csproj.CoreCompileInputs.cache
+C:\Users\rayam\source\repos\OnePass\OnePass\obj\Release\OnePass.exe
+C:\Users\rayam\source\repos\OnePass\OnePass\obj\Release\OnePass.pdb
