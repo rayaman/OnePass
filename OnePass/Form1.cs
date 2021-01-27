@@ -62,7 +62,7 @@ namespace OnePass
 
         void addSpecial(ref ArrayList list)
         {
-            foreach(int c in new int[]{ 33,35,36,37,38,39,40,41,42,43,44,45,46,47,64 })
+            foreach (int c in new int[] { 33, 35, 36, 37, 38, 40, 41, 42, 43, 44, 45, 64 })
             {
                 list.Add(Char.ConvertFromUtf32(c));
             }
