@@ -62,15 +62,22 @@ namespace OnePass
 
         void addSpecial(ref ArrayList list)
         {
-            for (int i = 33; i <= 47; i++)
+            foreach(int c in new int[]{ 33,35,36,37,38,39,40,41,42,43,44,45,46,47,64 })
             {
-                list.Add(Char.ConvertFromUtf32(i));
+                list.Add(Char.ConvertFromUtf32(c));
             }
-            for (int i = 58; i <= 64; i++)
+        }
+        void addExtended(ref ArrayList list)
+        {
+            for (int i = 56; i <= 63; i++)
             {
                 list.Add(Char.ConvertFromUtf32(i));
             }
             for (int i = 91; i <= 96; i++)
+            {
+                list.Add(Char.ConvertFromUtf32(i));
+            }
+            for (int i = 123; i <= 126; i++)
             {
                 list.Add(Char.ConvertFromUtf32(i));
             }
@@ -124,6 +131,8 @@ namespace OnePass
                 addLower(ref chars);
             if (uAtoZ.BackColor == System.Drawing.SystemColors.Highlight)
                 addUpper(ref chars);
+            if (extspc.BackColor == System.Drawing.SystemColors.Highlight)
+                addExtended(ref chars);
             if (chars.Count == 0)
             {
                 MessageBox.Show("Must have at least one option turned on to generate a password!");
@@ -156,6 +165,18 @@ namespace OnePass
             Thread.Sleep(1000);
             Generate.Text = "Generate Password";
             Generate.Enabled = true;
+        }
+
+        private void extspc_Click(object sender, EventArgs e)
+        {
+            if (extspc.BackColor == System.Drawing.SystemColors.InactiveCaption)
+            {
+                extspc.BackColor = System.Drawing.SystemColors.Highlight;
+            }
+            else
+            {
+                extspc.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            }
         }
     }
 }

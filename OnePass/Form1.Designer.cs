@@ -46,6 +46,7 @@ namespace OnePass
             this.uAtoZ = new System.Windows.Forms.Label();
             this.numbers = new System.Windows.Forms.Label();
             this.special = new System.Windows.Forms.Label();
+            this.extspc = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.passCycle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passLength)).BeginInit();
             this.SuspendLayout();
@@ -185,10 +186,10 @@ namespace OnePass
             this.atoz.AutoSize = true;
             this.atoz.BackColor = System.Drawing.SystemColors.Highlight;
             this.atoz.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.atoz.Font = new System.Drawing.Font("Segoe UI", 24F);
-            this.atoz.Location = new System.Drawing.Point(38, 95);
+            this.atoz.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.atoz.Location = new System.Drawing.Point(17, 95);
             this.atoz.Name = "atoz";
-            this.atoz.Size = new System.Drawing.Size(65, 47);
+            this.atoz.Size = new System.Drawing.Size(56, 39);
             this.atoz.TabIndex = 13;
             this.atoz.Text = "a-z";
             this.atoz.Click += new System.EventHandler(this.atoz_Click);
@@ -198,10 +199,10 @@ namespace OnePass
             this.uAtoZ.AutoSize = true;
             this.uAtoZ.BackColor = System.Drawing.SystemColors.Highlight;
             this.uAtoZ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uAtoZ.Font = new System.Drawing.Font("Segoe UI", 24F);
-            this.uAtoZ.Location = new System.Drawing.Point(109, 95);
+            this.uAtoZ.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.uAtoZ.Location = new System.Drawing.Point(79, 95);
             this.uAtoZ.Name = "uAtoZ";
-            this.uAtoZ.Size = new System.Drawing.Size(74, 47);
+            this.uAtoZ.Size = new System.Drawing.Size(62, 39);
             this.uAtoZ.TabIndex = 14;
             this.uAtoZ.Text = "A-Z";
             this.uAtoZ.Click += new System.EventHandler(this.uAtoZ_Click);
@@ -211,10 +212,10 @@ namespace OnePass
             this.numbers.AutoSize = true;
             this.numbers.BackColor = System.Drawing.SystemColors.Highlight;
             this.numbers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numbers.Font = new System.Drawing.Font("Segoe UI", 24F);
-            this.numbers.Location = new System.Drawing.Point(188, 95);
+            this.numbers.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.numbers.Location = new System.Drawing.Point(147, 95);
             this.numbers.Name = "numbers";
-            this.numbers.Size = new System.Drawing.Size(69, 47);
+            this.numbers.Size = new System.Drawing.Size(60, 39);
             this.numbers.TabIndex = 15;
             this.numbers.Text = "0-9";
             this.numbers.Click += new System.EventHandler(this.numbers_Click);
@@ -224,19 +225,33 @@ namespace OnePass
             this.special.AutoSize = true;
             this.special.BackColor = System.Drawing.SystemColors.Highlight;
             this.special.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.special.Font = new System.Drawing.Font("Segoe UI", 24F);
-            this.special.Location = new System.Drawing.Point(263, 95);
+            this.special.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.special.Location = new System.Drawing.Point(213, 95);
             this.special.Name = "special";
-            this.special.Size = new System.Drawing.Size(81, 47);
+            this.special.Size = new System.Drawing.Size(69, 39);
             this.special.TabIndex = 16;
             this.special.Text = "!@#";
             this.special.Click += new System.EventHandler(this.special_Click);
+            // 
+            // extspc
+            // 
+            this.extspc.AutoSize = true;
+            this.extspc.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.extspc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.extspc.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.extspc.Location = new System.Drawing.Point(288, 95);
+            this.extspc.Name = "extspc";
+            this.extspc.Size = new System.Drawing.Size(76, 39);
+            this.extspc.TabIndex = 17;
+            this.extspc.Text = "Ext%";
+            this.extspc.Click += new System.EventHandler(this.extspc_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 180);
+            this.Controls.Add(this.extspc);
             this.Controls.Add(this.special);
             this.Controls.Add(this.numbers);
             this.Controls.Add(this.uAtoZ);
@@ -257,7 +272,7 @@ namespace OnePass
             this.MaximumSize = new System.Drawing.Size(396, 219);
             this.MinimumSize = new System.Drawing.Size(396, 219);
             this.Name = "Form1";
-            this.Text = "OnePass V1.2";
+            this.Text = "OnePass V2.0";
             ((System.ComponentModel.ISupportInitialize)(this.passCycle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passLength)).EndInit();
             this.ResumeLayout(false);
@@ -283,6 +298,7 @@ namespace OnePass
         private System.Windows.Forms.Label uAtoZ;
         private System.Windows.Forms.Label numbers;
         private System.Windows.Forms.Label special;
+        private System.Windows.Forms.Label extspc;
     }
 }
 
