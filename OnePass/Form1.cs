@@ -1,11 +1,54 @@
 ﻿using System;
 using System.Collections;
+using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
 namespace OnePass
 {
+    class ImageHolder
+    {
+        string site;
+        string login;
+        byte isize;
+        byte[] imagedata;
+        public ImageHolder(Bitmap img,string sitename,string login)
+        {
+            site = sitename;
+            this.login = login;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                imagedata = ms.ToArray();
+                isize = (byte)ms.Length;
+            }
+        }
+        public ImageHolder(string filename)
+        {
+            if (File.Exists(filename))
+            {
+                using (BinaryReader reader = new BinaryReader(File.Open(filename, FileMode.Open)))
+                {
+                    site = reader.ReadString();
+                    login = reader.ReadString();
+                    isize = reader.ReadByte();
+                    imagedata = reader.ReadBytes(isize);
+                }
+            }
+        }
+        public void tofile(string filename)
+        {
+            using (BinaryWriter bw = new BinaryWriter(File.Open(filename, FileMode.Open)))
+            {
+                bw.Write(site);
+                bw.Write(login);
+                bw.Write(isize);
+                bw.Write(imagedata);
+            }
+        }
+    }
     public partial class Form1 : Form
     {
         public Form1()
@@ -114,6 +157,20 @@ namespace OnePass
                 qs.Append(list[r.Next(0,to)]);
             }
             return qs.ToString();
+        }
+        private void buildImage()
+        {
+            string name = "";
+            var datapath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "OnePassData\\");
+            if(!Directory.Exists(datapath))
+                Directory.CreateDirectory(datapath);
+            MessageBox.Show(datapath + name + ".png");
+            var frm = Form.ActiveForm;
+            using (var bmp = new Bitmap(frm.Width, frm.Height))
+            {
+                frm.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
+                bmp.Save(datapath + name + ".png");
+            }
         }
         private void Generate_Click(object sender, EventArgs e)
         {
