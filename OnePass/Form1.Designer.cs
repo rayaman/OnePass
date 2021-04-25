@@ -47,6 +47,7 @@ namespace OnePass
             this.numbers = new System.Windows.Forms.Label();
             this.special = new System.Windows.Forms.Label();
             this.extspc = new System.Windows.Forms.Label();
+            this.help = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.passCycle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passLength)).BeginInit();
             this.SuspendLayout();
@@ -152,7 +153,7 @@ namespace OnePass
             // 
             this.sitename.Location = new System.Drawing.Point(43, 6);
             this.sitename.Name = "sitename";
-            this.sitename.Size = new System.Drawing.Size(325, 20);
+            this.sitename.Size = new System.Drawing.Size(290, 20);
             this.sitename.TabIndex = 9;
             // 
             // username
@@ -246,11 +247,22 @@ namespace OnePass
             this.extspc.Text = "Ext%";
             this.extspc.Click += new System.EventHandler(this.extspc_Click);
             // 
+            // help
+            // 
+            this.help.Location = new System.Drawing.Point(339, 4);
+            this.help.Name = "help";
+            this.help.Size = new System.Drawing.Size(29, 23);
+            this.help.TabIndex = 18;
+            this.help.Text = "?";
+            this.help.UseVisualStyleBackColor = true;
+            this.help.Click += new System.EventHandler(this.help_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 180);
+            this.Controls.Add(this.help);
             this.Controls.Add(this.extspc);
             this.Controls.Add(this.special);
             this.Controls.Add(this.numbers);
@@ -299,6 +311,7 @@ namespace OnePass
         private System.Windows.Forms.Label numbers;
         private System.Windows.Forms.Label special;
         private System.Windows.Forms.Label extspc;
+        private System.Windows.Forms.Button help;
     }
 }
 

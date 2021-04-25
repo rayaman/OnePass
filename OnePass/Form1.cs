@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Text;
@@ -8,47 +9,6 @@ using System.Windows.Forms;
 
 namespace OnePass
 {
-    class ImageHolder
-    {
-        string site;
-        string login;
-        byte isize;
-        byte[] imagedata;
-        public ImageHolder(Bitmap img,string sitename,string login)
-        {
-            site = sitename;
-            this.login = login;
-            using (MemoryStream ms = new MemoryStream())
-            {
-                img.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
-                imagedata = ms.ToArray();
-                isize = (byte)ms.Length;
-            }
-        }
-        public ImageHolder(string filename)
-        {
-            if (File.Exists(filename))
-            {
-                using (BinaryReader reader = new BinaryReader(File.Open(filename, FileMode.Open)))
-                {
-                    site = reader.ReadString();
-                    login = reader.ReadString();
-                    isize = reader.ReadByte();
-                    imagedata = reader.ReadBytes(isize);
-                }
-            }
-        }
-        public void tofile(string filename)
-        {
-            using (BinaryWriter bw = new BinaryWriter(File.Open(filename, FileMode.Open)))
-            {
-                bw.Write(site);
-                bw.Write(login);
-                bw.Write(isize);
-                bw.Write(imagedata);
-            }
-        }
-    }
     public partial class Form1 : Form
     {
         public Form1()
@@ -215,13 +175,21 @@ namespace OnePass
                 temp = b;
                 seed ^= (temp << (c++ % 8) * 8);
             }
-            Clipboard.SetText(GenerateKey((uint)passLength.Value, seed, ref chars));
+            try
+            {
+                Clipboard.SetText(GenerateKey((uint)passLength.Value, seed, ref chars));
+            } catch
+            {
+                MessageBox.Show("Attempt to capture clipboard data over the network! (Are you using remote desktop w/clipboard)");
+            }
+            masterpass.Text = "";
             Generate.Text = "Copied to Clipboard";
             Generate.Enabled = false;
             this.Update();
-            Thread.Sleep(1000);
+            Thread.Sleep(7000);
             Generate.Text = "Generate Password";
             Generate.Enabled = true;
+            Clipboard.Clear();
         }
 
         private void extspc_Click(object sender, EventArgs e)
@@ -233,6 +201,52 @@ namespace OnePass
             else
             {
                 extspc.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            }
+        }
+
+        private void help_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("When a password is generated the password will live on your clipboard for 7 seconds (paste it quick). Then your master password and the clipboard is also cleared out! Make sure nothing important is on the clipboard!","Help!");
+        }
+    }
+    class ImageHolder
+    {
+        string site;
+        string login;
+        byte isize;
+        byte[] imagedata;
+        public ImageHolder(Bitmap img, string sitename, string login)
+        {
+            site = sitename;
+            this.login = login;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                imagedata = ms.ToArray();
+                isize = (byte)ms.Length;
+            }
+        }
+        public ImageHolder(string filename)
+        {
+            if (File.Exists(filename))
+            {
+                using (BinaryReader reader = new BinaryReader(File.Open(filename, FileMode.Open)))
+                {
+                    site = reader.ReadString();
+                    login = reader.ReadString();
+                    isize = reader.ReadByte();
+                    imagedata = reader.ReadBytes(isize);
+                }
+            }
+        }
+        public void tofile(string filename)
+        {
+            using (BinaryWriter bw = new BinaryWriter(File.Open(filename, FileMode.Open)))
+            {
+                bw.Write(site);
+                bw.Write(login);
+                bw.Write(isize);
+                bw.Write(imagedata);
             }
         }
     }
