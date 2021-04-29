@@ -11,10 +11,10 @@ C:\Users\rayam\source\repos\OnePass\OnePass\obj\Release\OnePass.pdb
 F:\VSCWorkspace\OnePass\OnePass\bin\Release\OnePass.exe.config
 F:\VSCWorkspace\OnePass\OnePass\bin\Release\OnePass.exe
 F:\VSCWorkspace\OnePass\OnePass\bin\Release\OnePass.pdb
-F:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.csprojAssemblyReference.cache
 F:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.Form1.resources
 F:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.Properties.Resources.resources
 F:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.csproj.GenerateResource.cache
 F:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.csproj.CoreCompileInputs.cache
 F:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.exe
 F:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.pdb
+F:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.Form2.resources

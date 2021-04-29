@@ -48,6 +48,9 @@ namespace OnePass
             this.special = new System.Windows.Forms.Label();
             this.extspc = new System.Windows.Forms.Label();
             this.help = new System.Windows.Forms.Button();
+            this.save_login = new System.Windows.Forms.Button();
+            this.load_login = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.passCycle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passLength)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +69,7 @@ namespace OnePass
             // 
             this.passCycle.Location = new System.Drawing.Point(209, 149);
             this.passCycle.Maximum = new decimal(new int[] {
-            1000,
+            9999,
             0,
             0,
             0});
@@ -78,7 +81,7 @@ namespace OnePass
             // 
             this.passLength.Location = new System.Drawing.Point(112, 150);
             this.passLength.Maximum = new decimal(new int[] {
-            64,
+            128,
             0,
             0,
             0});
@@ -153,21 +156,21 @@ namespace OnePass
             // 
             this.sitename.Location = new System.Drawing.Point(43, 6);
             this.sitename.Name = "sitename";
-            this.sitename.Size = new System.Drawing.Size(290, 20);
+            this.sitename.Size = new System.Drawing.Size(321, 20);
             this.sitename.TabIndex = 9;
             // 
             // username
             // 
             this.username.Location = new System.Drawing.Point(43, 31);
             this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(325, 20);
+            this.username.Size = new System.Drawing.Size(321, 20);
             this.username.TabIndex = 10;
             // 
             // masterpass
             // 
             this.masterpass.Location = new System.Drawing.Point(107, 56);
             this.masterpass.Name = "masterpass";
-            this.masterpass.Size = new System.Drawing.Size(261, 20);
+            this.masterpass.Size = new System.Drawing.Size(257, 20);
             this.masterpass.TabIndex = 11;
             this.masterpass.UseSystemPasswordChar = true;
             // 
@@ -249,19 +252,55 @@ namespace OnePass
             // 
             // help
             // 
-            this.help.Location = new System.Drawing.Point(339, 4);
+            this.help.Location = new System.Drawing.Point(370, 6);
             this.help.Name = "help";
-            this.help.Size = new System.Drawing.Size(29, 23);
+            this.help.Size = new System.Drawing.Size(52, 23);
             this.help.TabIndex = 18;
-            this.help.Text = "?";
+            this.help.Text = "Help";
             this.help.UseVisualStyleBackColor = true;
             this.help.Click += new System.EventHandler(this.help_Click);
+            // 
+            // save_login
+            // 
+            this.save_login.Location = new System.Drawing.Point(370, 29);
+            this.save_login.Name = "save_login";
+            this.save_login.Size = new System.Drawing.Size(52, 23);
+            this.save_login.TabIndex = 19;
+            this.save_login.Text = "Save";
+            this.save_login.UseVisualStyleBackColor = true;
+            this.save_login.Click += new System.EventHandler(this.save_login_Click);
+            // 
+            // load_login
+            // 
+            this.load_login.Location = new System.Drawing.Point(370, 53);
+            this.load_login.Name = "load_login";
+            this.load_login.Size = new System.Drawing.Size(52, 23);
+            this.load_login.TabIndex = 20;
+            this.load_login.Text = "Load";
+            this.load_login.UseVisualStyleBackColor = true;
+            this.load_login.Click += new System.EventHandler(this.load_login_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.label7.Location = new System.Drawing.Point(370, 95);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 39);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Pn";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 180);
+            this.ClientSize = new System.Drawing.Size(426, 180);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.load_login);
+            this.Controls.Add(this.save_login);
             this.Controls.Add(this.help);
             this.Controls.Add(this.extspc);
             this.Controls.Add(this.special);
@@ -281,10 +320,10 @@ namespace OnePass
             this.Controls.Add(this.passCycle);
             this.Controls.Add(this.Generate);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(396, 219);
-            this.MinimumSize = new System.Drawing.Size(396, 219);
+            this.MaximumSize = new System.Drawing.Size(442, 219);
+            this.MinimumSize = new System.Drawing.Size(442, 219);
             this.Name = "Form1";
-            this.Text = "OnePass V2.0";
+            this.Text = "OnePass V3.0";
             ((System.ComponentModel.ISupportInitialize)(this.passCycle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passLength)).EndInit();
             this.ResumeLayout(false);
@@ -312,6 +351,9 @@ namespace OnePass
         private System.Windows.Forms.Label special;
         private System.Windows.Forms.Label extspc;
         private System.Windows.Forms.Button help;
+        private System.Windows.Forms.Button save_login;
+        private System.Windows.Forms.Button load_login;
+        private System.Windows.Forms.Label label7;
     }
 }
 
