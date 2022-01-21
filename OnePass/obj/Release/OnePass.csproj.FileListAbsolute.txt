@@ -18,3 +18,13 @@ F:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.csproj.CoreCompileInputs.cac
 F:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.exe
 F:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.pdb
 F:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.Form2.resources
+G:\VSCWorkspace\OnePass\OnePass\bin\Release\OnePass.exe.config
+G:\VSCWorkspace\OnePass\OnePass\bin\Release\OnePass.exe
+G:\VSCWorkspace\OnePass\OnePass\bin\Release\OnePass.pdb
+G:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.Form1.resources
+G:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.Form2.resources
+G:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.Properties.Resources.resources
+G:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.csproj.GenerateResource.cache
+G:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.csproj.CoreCompileInputs.cache
+G:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.exe
+G:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.pdb

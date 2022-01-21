@@ -51,13 +51,16 @@ namespace OnePass
             this.save_login = new System.Windows.Forms.Button();
             this.load_login = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.verify = new System.Windows.Forms.TextBox();
+            this.verify_label = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.passCycle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passLength)).BeginInit();
             this.SuspendLayout();
             // 
             // Generate
             // 
-            this.Generate.Location = new System.Drawing.Point(259, 149);
+            this.Generate.Location = new System.Drawing.Point(259, 171);
             this.Generate.Name = "Generate";
             this.Generate.Size = new System.Drawing.Size(109, 20);
             this.Generate.TabIndex = 0;
@@ -67,7 +70,7 @@ namespace OnePass
             // 
             // passCycle
             // 
-            this.passCycle.Location = new System.Drawing.Point(209, 149);
+            this.passCycle.Location = new System.Drawing.Point(209, 171);
             this.passCycle.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -79,7 +82,7 @@ namespace OnePass
             // 
             // passLength
             // 
-            this.passLength.Location = new System.Drawing.Point(112, 150);
+            this.passLength.Location = new System.Drawing.Point(112, 172);
             this.passLength.Maximum = new decimal(new int[] {
             128,
             0,
@@ -103,7 +106,7 @@ namespace OnePass
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(164, 152);
+            this.label1.Location = new System.Drawing.Point(164, 174);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 4;
@@ -113,7 +116,7 @@ namespace OnePass
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(10, 151);
+            this.label2.Location = new System.Drawing.Point(10, 173);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 15);
             this.label2.TabIndex = 5;
@@ -179,7 +182,7 @@ namespace OnePass
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Location = new System.Drawing.Point(3, 77);
+            this.label6.Location = new System.Drawing.Point(3, 99);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 15);
             this.label6.TabIndex = 12;
@@ -191,7 +194,7 @@ namespace OnePass
             this.atoz.BackColor = System.Drawing.SystemColors.Highlight;
             this.atoz.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.atoz.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.atoz.Location = new System.Drawing.Point(17, 95);
+            this.atoz.Location = new System.Drawing.Point(17, 117);
             this.atoz.Name = "atoz";
             this.atoz.Size = new System.Drawing.Size(56, 39);
             this.atoz.TabIndex = 13;
@@ -204,7 +207,7 @@ namespace OnePass
             this.uAtoZ.BackColor = System.Drawing.SystemColors.Highlight;
             this.uAtoZ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.uAtoZ.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.uAtoZ.Location = new System.Drawing.Point(79, 95);
+            this.uAtoZ.Location = new System.Drawing.Point(79, 117);
             this.uAtoZ.Name = "uAtoZ";
             this.uAtoZ.Size = new System.Drawing.Size(62, 39);
             this.uAtoZ.TabIndex = 14;
@@ -217,7 +220,7 @@ namespace OnePass
             this.numbers.BackColor = System.Drawing.SystemColors.Highlight;
             this.numbers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numbers.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.numbers.Location = new System.Drawing.Point(147, 95);
+            this.numbers.Location = new System.Drawing.Point(147, 117);
             this.numbers.Name = "numbers";
             this.numbers.Size = new System.Drawing.Size(60, 39);
             this.numbers.TabIndex = 15;
@@ -230,7 +233,7 @@ namespace OnePass
             this.special.BackColor = System.Drawing.SystemColors.Highlight;
             this.special.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.special.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.special.Location = new System.Drawing.Point(213, 95);
+            this.special.Location = new System.Drawing.Point(213, 117);
             this.special.Name = "special";
             this.special.Size = new System.Drawing.Size(69, 39);
             this.special.TabIndex = 16;
@@ -243,7 +246,7 @@ namespace OnePass
             this.extspc.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.extspc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.extspc.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.extspc.Location = new System.Drawing.Point(288, 95);
+            this.extspc.Location = new System.Drawing.Point(288, 117);
             this.extspc.Name = "extspc";
             this.extspc.Size = new System.Drawing.Size(76, 39);
             this.extspc.TabIndex = 17;
@@ -286,18 +289,53 @@ namespace OnePass
             this.label7.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.label7.Location = new System.Drawing.Point(370, 95);
+            this.label7.Location = new System.Drawing.Point(370, 117);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 39);
             this.label7.TabIndex = 21;
             this.label7.Text = "Pn";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // verify
+            // 
+            this.verify.Location = new System.Drawing.Point(107, 82);
+            this.verify.Name = "verify";
+            this.verify.Size = new System.Drawing.Size(257, 20);
+            this.verify.TabIndex = 22;
+            this.verify.UseSystemPasswordChar = true;
+            // 
+            // verify_label
+            // 
+            this.verify_label.AutoSize = true;
+            this.verify_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.verify_label.Location = new System.Drawing.Point(64, 84);
+            this.verify_label.Name = "verify_label";
+            this.verify_label.Size = new System.Drawing.Size(43, 15);
+            this.verify_label.TabIndex = 23;
+            this.verify_label.Text = "Verify:";
+            this.verify_label.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.checkBox1.Location = new System.Drawing.Point(371, 84);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(57, 19);
+            this.checkBox1.TabIndex = 24;
+            this.checkBox1.Text = "Show";
+            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 180);
+            this.ClientSize = new System.Drawing.Size(426, 198);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.verify_label);
+            this.Controls.Add(this.verify);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.load_login);
             this.Controls.Add(this.save_login);
@@ -320,10 +358,10 @@ namespace OnePass
             this.Controls.Add(this.passCycle);
             this.Controls.Add(this.Generate);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(442, 219);
-            this.MinimumSize = new System.Drawing.Size(442, 219);
+            this.MaximumSize = new System.Drawing.Size(442, 237);
+            this.MinimumSize = new System.Drawing.Size(442, 237);
             this.Name = "Form1";
-            this.Text = "OnePass V3.0";
+            this.Text = "OnePass V4.0";
             ((System.ComponentModel.ISupportInitialize)(this.passCycle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passLength)).EndInit();
             this.ResumeLayout(false);
@@ -354,6 +392,9 @@ namespace OnePass
         private System.Windows.Forms.Button save_login;
         private System.Windows.Forms.Button load_login;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox verify;
+        private System.Windows.Forms.Label verify_label;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
