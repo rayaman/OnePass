@@ -177,11 +177,6 @@ namespace OnePass
         }
         private void Generate_Click(object sender, EventArgs e)
         {
-            if(!checkBox1.Checked && masterpass.Text != verify.Text)
-            {
-                MessageBox.Show("Passwords must match!");
-                return;
-            }
             if (sitename.Text == "" || username.Text == "" || masterpass.Text == "")
             {
                 MessageBox.Show("Cannot leave a field blank!");
@@ -238,7 +233,6 @@ namespace OnePass
                 MessageBox.Show("Attempt to capture clipboard data over the network! (Are you using remote desktop w/clipboard)");
             }
             masterpass.Text = "";
-            verify.Text = "";
             Generate.Text = "Copied to Clipboard";
             Generate.Enabled = false;
             Update();
@@ -330,9 +324,6 @@ namespace OnePass
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             masterpass.UseSystemPasswordChar = !checkBox1.Checked;
-            verify.UseSystemPasswordChar = !checkBox1.Checked;
-            verify_label.Enabled = !checkBox1.Checked;
-            verify.Enabled = !checkBox1.Checked;
         }
     }
 }

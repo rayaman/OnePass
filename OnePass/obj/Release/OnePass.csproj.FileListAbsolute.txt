@@ -28,3 +28,4 @@ G:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.csproj.GenerateResource.cach
 G:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.csproj.CoreCompileInputs.cache
 G:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.exe
 G:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.pdb
+G:\VSCWorkspace\OnePass\OnePass\obj\Release\OnePass.csproj.AssemblyReference.cache
