@@ -233,13 +233,6 @@ namespace OnePass
                 MessageBox.Show("Attempt to capture clipboard data over the network! (Are you using remote desktop w/clipboard)");
             }
             masterpass.Text = "";
-            Generate.Text = "Copied to Clipboard";
-            Generate.Enabled = false;
-            Update();
-            Thread.Sleep(7000);
-            Generate.Text = "Generate Password";
-            Generate.Enabled = true;
-            Clipboard.Clear();
         }
 
         private void extspc_Click(object sender, EventArgs e)
@@ -324,6 +317,11 @@ namespace OnePass
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             masterpass.UseSystemPasswordChar = !checkBox1.Checked;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
