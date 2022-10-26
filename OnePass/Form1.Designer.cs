@@ -338,7 +338,7 @@ namespace OnePass
             this.MaximumSize = new System.Drawing.Size(442, 222);
             this.MinimumSize = new System.Drawing.Size(442, 222);
             this.Name = "Form1";
-            this.Text = "OnePass V5.1";
+            this.Text = "OnePass V5.2";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.passCycle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passLength)).EndInit();

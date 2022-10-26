@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Threading;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace OnePass
@@ -59,19 +60,19 @@ namespace OnePass
                 isvowel = !isvowel;
             }
             return pass;
-        }
+        }//using Microsoft.WindowsAPICodePack.Dialogs;
         private void label7_Click(object sender, EventArgs e)
         {
-            label7.BackColor = SystemColors.Highlight;
-            atoz.BackColor = SystemColors.InactiveCaption;
-            uAtoZ.BackColor = SystemColors.InactiveCaption;
-            numbers.BackColor = SystemColors.InactiveCaption;
-            special.BackColor = SystemColors.InactiveCaption;
-            extspc.BackColor = SystemColors.InactiveCaption;
+            label7.BackColor = System.Drawing.SystemColors.Highlight;
+            atoz.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            uAtoZ.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            numbers.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            special.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            extspc.BackColor = System.Drawing.SystemColors.InactiveCaption;
         }
         private void atoz_Click(object sender, EventArgs e)
         {
-            label7.BackColor = SystemColors.InactiveCaption;
+            label7.BackColor = System.Drawing.SystemColors.InactiveCaption;
             if (atoz.BackColor == System.Drawing.SystemColors.InactiveCaption)
             {
                 atoz.BackColor = System.Drawing.SystemColors.Highlight;
@@ -83,7 +84,7 @@ namespace OnePass
 
         private void uAtoZ_Click(object sender, EventArgs e)
         {
-            label7.BackColor = SystemColors.InactiveCaption;
+            label7.BackColor = System.Drawing.SystemColors.InactiveCaption;
             if (uAtoZ.BackColor == System.Drawing.SystemColors.InactiveCaption)
             {
                 uAtoZ.BackColor = System.Drawing.SystemColors.Highlight;
@@ -96,7 +97,7 @@ namespace OnePass
 
         private void numbers_Click(object sender, EventArgs e)
         {
-            label7.BackColor = SystemColors.InactiveCaption;
+            label7.BackColor = System.Drawing.SystemColors.InactiveCaption;
             if (numbers.BackColor == System.Drawing.SystemColors.InactiveCaption)
             {
                 numbers.BackColor = System.Drawing.SystemColors.Highlight;
@@ -109,7 +110,7 @@ namespace OnePass
 
         private void special_Click(object sender, EventArgs e)
         {
-            label7.BackColor = SystemColors.InactiveCaption;
+            label7.BackColor = System.Drawing.SystemColors.InactiveCaption;
             if (special.BackColor == System.Drawing.SystemColors.InactiveCaption)
             {
                 special.BackColor = System.Drawing.SystemColors.Highlight;
@@ -179,7 +180,7 @@ namespace OnePass
         {
             if (sitename.Text == "" || username.Text == "" || masterpass.Text == "")
             {
-                MessageBox.Show("Cannot leave a field blank!");
+                System.Windows.MessageBox.Show("Cannot leave a field blank!");
                 return;
             }
             ArrayList chars = new ArrayList();
@@ -193,13 +194,13 @@ namespace OnePass
                 addUpper(ref chars);
             if (extspc.BackColor == System.Drawing.SystemColors.Highlight)
                 addExtended(ref chars);
-            if(label7.BackColor == SystemColors.Highlight)
+            if(label7.BackColor == System.Drawing.SystemColors.Highlight)
             {
                 chars.Add('A');
             }
             if (chars.Count == 0)
             {
-                MessageBox.Show("Must have at least one option turned on to generate a password!");
+                System.Windows.MessageBox.Show("Must have at least one option turned on to generate a password!");
                 return;
             }
             byte[] sn_bytes = Encoding.ASCII.GetBytes(sitename.Text);
@@ -224,20 +225,20 @@ namespace OnePass
             }
             try
             {
-                if (label7.BackColor == SystemColors.Highlight)
-                    Clipboard.SetText(GeneratePassword((int)passLength.Value, (int)seed));
+                if (label7.BackColor == System.Drawing.SystemColors.Highlight)
+                    System.Windows.Clipboard.SetText(GeneratePassword((int)passLength.Value, (int)seed));
                 else
-                    Clipboard.SetText(GenerateKey((uint)passLength.Value, seed, ref chars));
+                    System.Windows.Clipboard.SetText(GenerateKey((uint)passLength.Value, seed, ref chars));
             } catch
             {
-                MessageBox.Show("Attempt to capture clipboard data over the network! (Are you using remote desktop w/clipboard)");
+                System.Windows.MessageBox.Show("Attempt to capture clipboard data over the network! (Are you using remote desktop w/clipboard)");
             }
             masterpass.Text = "";
         }
 
         private void extspc_Click(object sender, EventArgs e)
         {
-            label7.BackColor = SystemColors.InactiveCaption;
+            label7.BackColor = System.Drawing.SystemColors.InactiveCaption;
             if (extspc.BackColor == System.Drawing.SystemColors.InactiveCaption)
             {
                 extspc.BackColor = System.Drawing.SystemColors.Highlight;
@@ -250,7 +251,7 @@ namespace OnePass
 
         private void help_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("When a password is generated the password will live on your clipboard for 7 seconds (paste it quick). Then your master password and the clipboard is also cleared out! Make sure nothing important is on the clipboard!","Help!");
+            System.Windows.MessageBox.Show("When a password is generated the password will live on your clipboard for 7 seconds (paste it quick). Then your master password and the clipboard is also cleared out! Make sure nothing important is on the clipboard!","Help!");
         }
         private string MakeValidFileName(string name)
         {
@@ -271,12 +272,12 @@ namespace OnePass
                 username.Text = form2.login;
                 passCycle.Value = (decimal)form2.cycle;
                 passLength.Value = (decimal)form2.length;
-                special.BackColor = (form2.opt1) ? SystemColors.Highlight : SystemColors.InactiveCaption;
-                numbers.BackColor = (form2.opt2) ? SystemColors.Highlight : SystemColors.InactiveCaption;
-                atoz.BackColor = (form2.opt3) ? SystemColors.Highlight : SystemColors.InactiveCaption;
-                uAtoZ.BackColor = (form2.opt4) ? SystemColors.Highlight : SystemColors.InactiveCaption;
-                extspc.BackColor = (form2.opt5) ? SystemColors.Highlight : SystemColors.InactiveCaption;
-                label7.BackColor = (form2.opt6) ? SystemColors.Highlight : SystemColors.InactiveCaption;
+                special.BackColor = (form2.opt1) ? System.Drawing.SystemColors.Highlight : System.Drawing.SystemColors.InactiveCaption;
+                numbers.BackColor = (form2.opt2) ? System.Drawing.SystemColors.Highlight : System.Drawing.SystemColors.InactiveCaption;
+                atoz.BackColor = (form2.opt3) ? System.Drawing.SystemColors.Highlight : System.Drawing.SystemColors.InactiveCaption;
+                uAtoZ.BackColor = (form2.opt4) ? System.Drawing.SystemColors.Highlight : System.Drawing.SystemColors.InactiveCaption;
+                extspc.BackColor = (form2.opt5) ? System.Drawing.SystemColors.Highlight : System.Drawing.SystemColors.InactiveCaption;
+                label7.BackColor = (form2.opt6) ? System.Drawing.SystemColors.Highlight : System.Drawing.SystemColors.InactiveCaption;
             }
         }
 
@@ -284,7 +285,7 @@ namespace OnePass
         {
             if(sitename.Text=="" || username.Text == "")
             {
-                MessageBox.Show("Cannot save data if fields are incomplete!");
+                System.Windows.MessageBox.Show("Cannot save data if fields are incomplete!");
                 return;
             }
             try
@@ -294,18 +295,18 @@ namespace OnePass
                 writer.Write(username.Text);
                 writer.Write((int)passCycle.Value);
                 writer.Write((int)passLength.Value);
-                writer.Write(special.BackColor == SystemColors.Highlight);
-                writer.Write(numbers.BackColor == SystemColors.Highlight);
-                writer.Write(atoz.BackColor == SystemColors.Highlight);
-                writer.Write(uAtoZ.BackColor == SystemColors.Highlight);
-                writer.Write(extspc.BackColor == SystemColors.Highlight);
-                writer.Write(label7.BackColor == SystemColors.Highlight);
+                writer.Write(special.BackColor == System.Drawing.SystemColors.Highlight);
+                writer.Write(numbers.BackColor == System.Drawing.SystemColors.Highlight);
+                writer.Write(atoz.BackColor == System.Drawing.SystemColors.Highlight);
+                writer.Write(uAtoZ.BackColor == System.Drawing.SystemColors.Highlight);
+                writer.Write(extspc.BackColor == System.Drawing.SystemColors.Highlight);
+                writer.Write(label7.BackColor == System.Drawing.SystemColors.Highlight);
                 writer.Flush();
                 writer.Dispose();
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                System.Windows.MessageBox.Show(ex.Message);
             }
         }
 

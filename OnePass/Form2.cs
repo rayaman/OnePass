@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO.Compression;
+using System.Globalization;
 
 namespace OnePass
 {
     public partial class Form2 : Form
-    {//
+    {
         public string site { get; set; }
         public string login { get; set; }
         public bool opt6 { get; set; }
@@ -25,6 +21,7 @@ namespace OnePass
         public int cycle { get; set; }
         public bool state { get; set; }
         public string path { get; }
+        public string desktop = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
         List<string> files = new List<string>();
         public Form2()
         {
@@ -92,6 +89,44 @@ namespace OnePass
                 File.Delete(files[Logins.SelectedIndex]);
                 init();
             }
+        }
+        //Export
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string filename = "logins_" + DateTime.Now.ToString("MM-dd-yy (hhmmss)") + ".onp";
+            try
+            {
+                ZipFile.CreateFromDirectory(path, Path.Combine(desktop, filename));
+                MessageBox.Show("Export has been saved to: " + Path.Combine(desktop, filename));
+            } catch
+            {
+                MessageBox.Show("An export already exists! " + Path.Combine(desktop, filename));
+            }
+        }
+        //Import
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openDialog = new OpenFileDialog();
+            openDialog.Title = "Select A File";
+            openDialog.Filter = "Onepass Files (*.onp)|*.onp" + "|" +
+                                "All Files (*.*)|*.*";
+            try
+            {
+                if (openDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ZipFile.ExtractToDirectory(openDialog.FileName, path);
+                    init();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Invalid file selected!");
+            }
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            //
         }
     }
 }
