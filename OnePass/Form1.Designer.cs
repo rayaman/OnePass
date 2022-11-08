@@ -52,6 +52,7 @@ namespace OnePass
             this.load_login = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.keep_chk = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.passCycle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passLength)).BeginInit();
             this.SuspendLayout();
@@ -307,11 +308,25 @@ namespace OnePass
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // keep_chk
+            // 
+            this.keep_chk.AutoSize = true;
+            this.keep_chk.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.keep_chk.Location = new System.Drawing.Point(314, 79);
+            this.keep_chk.Name = "keep_chk";
+            this.keep_chk.Size = new System.Drawing.Size(55, 19);
+            this.keep_chk.TabIndex = 25;
+            this.keep_chk.Text = "Keep";
+            this.keep_chk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.keep_chk.UseVisualStyleBackColor = true;
+            this.keep_chk.CheckedChanged += new System.EventHandler(this.keep_chk_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 183);
+            this.Controls.Add(this.keep_chk);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.load_login);
@@ -338,7 +353,7 @@ namespace OnePass
             this.MaximumSize = new System.Drawing.Size(442, 222);
             this.MinimumSize = new System.Drawing.Size(442, 222);
             this.Name = "Form1";
-            this.Text = "OnePass V5.2";
+            this.Text = "OnePass V5.2.1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.passCycle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passLength)).EndInit();
@@ -371,6 +386,7 @@ namespace OnePass
         private System.Windows.Forms.Button load_login;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox keep_chk;
     }
 }
 

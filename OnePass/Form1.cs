@@ -233,7 +233,8 @@ namespace OnePass
             {
                 System.Windows.MessageBox.Show("Attempt to capture clipboard data over the network! (Are you using remote desktop w/clipboard)");
             }
-            masterpass.Text = "";
+            if (!keep_chk.Checked)
+                masterpass.Text = "";
         }
 
         private void extspc_Click(object sender, EventArgs e)
@@ -321,6 +322,11 @@ namespace OnePass
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void keep_chk_CheckedChanged(object sender, EventArgs e)
         {
 
         }
